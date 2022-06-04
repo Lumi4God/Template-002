@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Blaka+Hollow&family=Bungee&family=Bungee+Shade&family=Creepster&family=Faster+One&family=Frijole&family=Kumar+One&family=Luckiest+Guy&family=Monofett&family=Monoton&family=Montserrat:wght@300;400;500;600&family=Moo+Lah+Lah&family=Press+Start+2P&family=Rubik+Wet+Paint&family=Sansita+Swashed:wght@300&family=Shojumaru&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to right, rgb(255, 0, 242), rgb(0, 30, 255));
+}
+
+/*********navbar***********/
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 15px;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+}
+
+.logo {
+    margin-right: 50px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+#toggler,
+.navbar label {
+    display: none;
+}
+
+label i {
+    color: #fff;
+}
+
+/****line under menus when hover*****/
+/* li a:hover {
+    color: crimson;
+} */
+li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: crimson;
+    transition: .3s;
+    bottom: 0;
+}
+
+li a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background: crimson;
+    transition: .3s;
+    top: 0;
+}
+
+li a:hover::before {
+    width: 100%;
+}
+
+li a:hover::after {
+    width: 100%;
+}
+
+/*****************section***************/
+section {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section img {
+    position: fixed;
+    width: 50%;
+    height: 55rem;
+}
+
+section .head {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Kumar One', cursive;
+    width: 100%;
+    position: absolute;
+}
+
+section .head i {
+    font-size: 10em;
+    color: #fff;
+}
+
+section .head h1 {
+    font-size: 10em;
+    color: #fff;
+}
+
+section .head .dot {
+    display: inline-block;
+    color: #fff;
+    width: 10px;
+}
+
+section .head .dot span {
+    border-radius: 50%;
+    font-size: 50px;
+    color: #fff;
+    position: relative;
+}
+
+/* section .head .dot span::after {
+    content: "";
+    border-radius: 50%;
+    border: 1px solid #fff;
+    color: #fff;
+    position: absolute;
+}
+section .head .dot span::before {
+    content: "";
+    border-radius: 50%;
+    border: 1px solid #fff;
+    color: #fff;
+    position: absolute;
+} */
+
+section p {
+    color: #fff;
+    position: absolute;
+    top: 500px;
+}
+
+video {
+    position: fixed;
+    bottom: 0px;
+}
+/************RESPONSIVENESS*************/
+@media screen and (max-width: 1350px) {
+   section .head i{
+       font-size: 6.5em;
+   }
+   section .head h1{
+    font-size: 6.5em;
+   }
+   section .head .dot {
+       position: relative;
+       top: -50px;
+   }
+   section p {
+    position: absolute;
+    top: 400px; 
+   }
+   section img {
+    width: 50%;
+    height: 50rem;
+  }
+}
+@media screen and (max-width: 1050px)  {
+    video {
+        width: 300px;
+        height: auto;
+    }
+}
+@media screen and (max-width: 900px) {
+    section .head i{
+        font-size: 5em;
+    }
+    section .head h1{
+     font-size: 5em;
+    }
+    section p {
+     position: absolute;
+     top: 370px; 
+    }
+ }
+@media screen and (max-width: 768px) {
+    .menu {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .list {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .navbar label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #toggler:checked~.menu {
+        max-height: 100%;
+    }
+    section .head i{
+        font-size: 4em;
+    }
+    section .head h1{
+     font-size: 4em;
+    }
+    section p {
+     position: absolute;
+     top: 350px; 
+     font-size: 15px;
+     text-align: center;
+     margin-left: 24px;
+    }
+}
+@media screen and (max-width: 550px) {
+    section img {
+        width: 50%;
+        height: 50rem;
+    }
+    section .head i{
+        font-size: 3.5em;
+    }
+    section .head h1{
+     font-size: 3em;
+    }
+    section .head .dot {
+        position: relative;
+        top: -70px;
+    }
+    section p {
+     position: absolute;
+     top: 350px; 
+     font-size: 13px;
+    }
+    video {
+        width: 220px;
+        height: auto;
+    }
+}
+@media screen and (max-width: 450px) {
+    section img {
+        width: 50%;
+        height: 50rem;
+    }
+    section .head i{
+        font-size: 2.5em;
+    }
+    section .head h1{
+     font-size: 2em;
+    }
+    section .head .dot {
+        position: relative;
+        top: -80px;
+    }
+    section p {
+     position: absolute;
+     top: 350px; 
+     font-size: 13px;
+    }
+    video {
+        width: 220px;
+        height: auto;
+    }
+}
+@media screen and (max-width: 350px) {
+    section img {
+        width: 50%;
+        height: 50rem;
+    }
+    section .head i{
+        font-size: 1.8em;
+    }
+    section .head h1{
+     font-size: 1.5em;
+    }
+    section .head .dot {
+        font-size: 1em;
+        position: relative;
+        top: -80px;
+    }
+    section p {
+     position: absolute;
+     top: 350px; 
+     font-size: 15px;
+    }
+    video {
+        width: 160px;
+        height: auto;
+    }
+}
